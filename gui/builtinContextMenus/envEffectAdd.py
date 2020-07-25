@@ -103,17 +103,17 @@ class AddEnvironmentEffect(ContextMenuUnconditional):
     def getData(self):
         data = Group()
         data.groups[_t('Wormhole')] = self.getEffectBeacons(
-            _t('ContextMenu|ProjectedEffectManipulation|Black Hole'),
-            _t('ContextMenu|ProjectedEffectManipulation|Cataclysmic Variable'),
-            _t('ContextMenu|ProjectedEffectManipulation|Magnetar'),
-            _t('ContextMenu|ProjectedEffectManipulation|Pulsar'),
-            _t('ContextMenu|ProjectedEffectManipulation|Red Giant'),
-            _t('ContextMenu|ProjectedEffectManipulation|Wolf Rayet'))
+                _t('Black Hole', context='ContextMenu|ProjectedEffectManipulation'),
+                _t('Cataclysmic Variable', context='ContextMenu|ProjectedEffectManipulation'),
+                _t('Magnetar', context='ContextMenu|ProjectedEffectManipulation'),
+                _t('Pulsar', context='ContextMenu|ProjectedEffectManipulation'),
+                _t('Red Giant', context='ContextMenu|ProjectedEffectManipulation'),
+                _t('Wolf Rayet', context='ContextMenu|ProjectedEffectManipulation'))
         data.groups[_t('Sansha Incursion')] = self.getEffectBeacons(
-            _t('ContextMenu|ProjectedEffectManipulation|Sansha Incursion')
+                _t('Sansha Incursion', context='ContextMenu|ProjectedEffectManipulation')
         )
         data.groups[_t('Triglavian Invasion')] = self.getEffectBeacons(
-            _t('ContextMenu|ProjectedEffectManipulation|Triglavian Invasion')
+                _t('Triglavian Invasion', context='ContextMenu|ProjectedEffectManipulation')
         )
         data.groups[_t('Triglavian Invasion')].groups[_t('Destructible Beacons')] = self.getDestructibleBeacons()
         data.groups[_t('Abyssal Weather')] = self.getAbyssalWeather()
@@ -130,7 +130,7 @@ class AddEnvironmentEffect(ContextMenuUnconditional):
         data = Group()
 
         # Stuff we don't want to see in names
-        garbages = (_t("ContextMenu|ProjectedEffectManipulation|System Effects"), _t("ContextMenu|ProjectedEffectManipulation|Effects"))
+        garbages = (_t("System Effects", context="ContextMenu|ProjectedEffectManipulation"), _t("Effects", context="ContextMenu|ProjectedEffectManipulation"))
 
         # Get group with all the system-wide beacons
         grp = sMkt.getGroup("Effect Beacon")
