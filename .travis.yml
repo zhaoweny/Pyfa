@@ -12,7 +12,7 @@ matrix:
 before_install:
   - bash scripts/setup-osx.sh
 install:
-  - python3 scripts/compile_lang.py
+  - python3 -m scripts.compile_lang
   - python3 db_update.py
   - export PYFA_VERSION="$(python3 scripts/dump_version.py)"
   - bash scripts/package-osx.sh
